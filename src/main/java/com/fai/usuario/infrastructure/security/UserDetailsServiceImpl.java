@@ -1,8 +1,5 @@
 package com.fai.usuario.infrastructure.security;
 
-
-
-
 import com.fai.usuario.infrastructure.entity.Usuario;
 import com.fai.usuario.infrastructure.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
