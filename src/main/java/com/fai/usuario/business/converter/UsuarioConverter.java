@@ -14,6 +14,8 @@ import java.util.List;
 @Component
 public class UsuarioConverter {
 
+    private UsuarioDTO usuarioDTO;
+
     public Usuario paraUsuario(UsuarioDTO usuarioDTO){
 
         return Usuario.builder()
@@ -117,6 +119,20 @@ public class UsuarioConverter {
                 .ddd(telefoneDTO.getDdd())
                 .build();
     }
+
+    public Usuario updateUsuario(UsuarioDTO uusuarioDTO, Usuario entity){
+        this.usuarioDTO = uusuarioDTO;
+        return Usuario.builder()
+                .nome(uusuarioDTO.getNome() != null ? uusuarioDTO.getNome() : entity.getNome())
+                .id(entity.getId())
+                .senha(uusuarioDTO.getSenha() != null ? uusuarioDTO.getSenha() : entity.getSenha())
+                .email(usuarioDTO.getSenha() != null ? uusuarioDTO.getEmail() : entity.getEmail())
+                .enderecos(entity.getEnderecos())
+                .telefones(entity.getTelefones())
+                .build();
+    }
+
+
 
 
 }
